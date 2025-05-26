@@ -109,6 +109,24 @@ $(document).ready(function() {
       }
     });
   }
+
+  // code to toggle the hamburger menu
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  menuToggle.onclick = function() {
+    sidebar.classList.toggle('active');
+  };
+  function closeSidebar() {
+    sidebar.classList.remove('active');
+}
+// Optional: Close sidebar when clicking outside
+ document.addEventListener('click', function(e) {
+  if (!sidebar.contains(e.target) && e.target !== menuToggle) {
+    sidebar.classList.remove('active');
+  }
+});
   
+
 
  
