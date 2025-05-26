@@ -22,18 +22,24 @@
                     <i class="fa fa-bolt i" style="color: #FFD700;"></i>
                     <span>Portfolio</span>
                 </div>
-                <ul class="navbar">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <nav class="sidebar-menu" id="sidebarMenu">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar sidebar-nav" id="sidebarNav">
+                        <li><a href="#home" onclick="closeSidebar()">Home</a></li>
+                        <li><a href="#about" onclick="closeSidebar()">About</a></li>
+                        <li><a href="#education" onclick="closeSidebar()">Education</a></li>
+                        <li><a href="#skills" onclick="closeSidebar()">Skills</a></li>
+                        <li><a href="#projects" onclick="closeSidebar()">Projects</a></li>
+                        <li><a href="#certificates" onclick="closeSidebar()">Certificates</a></li>
+                        <li><a href="#contact" onclick="closeSidebar()">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div> 
     </header>
+    
 
     <!-------------------------- Home Page -------------------------->
     <div class="FirstElement" id="home">
