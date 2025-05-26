@@ -37,7 +37,7 @@ body {
 /*---------------------------Header---------------------------*/
 
 .header-area {
-  padding: 20px 0;
+  padding: 2px 0;
   transition: padding .3s;
 }
 
@@ -57,6 +57,7 @@ body {
   margin-left: 20px !important;
   transition: color 0.3s;
   gap: 10px;
+  padding: 10px;
 }
 .icon i{
   color: #fed700;
@@ -805,29 +806,96 @@ profile-photo .img {
   .container {
     width: 750px;
   }
+  .FirstElement {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+  .profile-text {
+    padding: 30px 0px;
+    width: 100%;
+  }
+  .about {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .about-skills {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .education-content .row {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .education-content .row .education,
+  .education-content .row .internship {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+  .projects {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .project {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+  .certificates-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .certificate-item {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 /* Mobile Layout */
 @media only screen and (max-width:767px) {
   .container {
-    width: 350px;
+    width: 95%;
+    min-width: unset;
+    padding: 0 8px;
   }
   .header-area {
     position: sticky;
     top: 0;
+    padding: 5px 0;
+  }
+  .header {
+    flex-direction: row;
+    padding: 0 8px;
   }
   .header .menu_icon {
     display: block;
-
   }
   .header ul {
     display: none;
+    flex-direction: column;
+    background: #202020;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
   }
   .header i {
     color: #e5e5e5;
   }
   .profile-text {
-    width: 350px;
+    width: 100%;
+    padding: 20px 0;
+  }
+  .FirstElement {
+    flex-direction: column;
+    padding-top: 2rem;
+    gap: 24px;
+  }
+  .FirstElement .profile-photo {
+    width: 180px;
+    height: 180px;
+    border-width: 8px;
   }
   .FirstElement .profile-text p {
     text-align: justify;
@@ -852,8 +920,29 @@ profile-photo .img {
     max-width: 100%;
     margin-top: 30px;
   }
+  .projects {
+    flex-direction: column;
+    gap: 14px;
+  }
   .project {
     flex-basis: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    padding: 16px 8px;
+  }
+  .certificates-list {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .certificate-item {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    padding: 16px 8px;
+  }
+  .contact-form form {
+    padding: 16px 8px;
+  }
+  .footer {
+    padding: 10px 0 18px;
+    font-size: 11px;
   }
 }
