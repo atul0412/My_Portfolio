@@ -109,7 +109,27 @@ $(document).ready(function() {
       }
     });
   }
-  
-  
+  // Sidebar toggle functionality
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebarNav = document.getElementById('sidebarNav');
+
+  if (sidebarToggle && sidebarNav) {
+    sidebarToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      sidebarNav.classList.toggle('open');
+    });
+
+    // Close sidebar function
+    function closeSidebar() {
+      sidebarNav.classList.remove('open');
+    }
+
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!sidebarNav.contains(e.target) && !sidebarToggle.contains(e.target)) {
+        closeSidebar();
+      }
+    });
+  }
 
  

@@ -54,10 +54,11 @@ body {
   color: #fff;
   font-size: 30px;
   cursor: pointer;
-  margin-left: 50px !important;
   transition: color 0.3s;
   gap: 10px;
   padding: 10px;
+  display: flex;
+  align-items: start
 }
 .icon i{
   color: #fed700;
@@ -866,6 +867,7 @@ profile-photo .img {
   .header {
     flex-direction: row;
     padding: 0 8px;
+    justify-content: space-between;
   }
   .header .menu_icon {
     display: block;
