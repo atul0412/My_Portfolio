@@ -27,7 +27,7 @@ I am a passionate developer with experience in building web and software solutio
 
 ## Contact
 
-Feel free to reach out via [email@example.com](mailto:email@example.com) or connect with me on [LinkedIn](https://www.linkedin.com/).
+Feel free to reach out via [atulpandey0412@example.com] or connect with me on https://www.linkedin.com/in/atul-pandey-6285b0244/.
 
 ---
 
