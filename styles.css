@@ -852,7 +852,7 @@ profile-photo .img {
     top: 51px; /* Adjust if your header height changes */
     left: -500px; /* Hidden by default */
     width: 100%; /* A fixed width for the sliding menu */
-    height: 60vh; /* Make it full height of the viewport */
+    height: 50vh; /* Make it full height of the viewport */
     background-color: #202020;
     padding: 40px 20px 20px 20px;
     transition: left 0.3s ease; /* Smooth transition for sliding */
