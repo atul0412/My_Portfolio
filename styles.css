@@ -865,9 +865,9 @@ profile-photo .img {
   nav ul {
     display: flex; /* Use flex to stack list items */
     flex-direction: column;
-    gap: 10px; /* Reduced gap for better fit */
+    gap: 0; /* Reduced gap for better fit */
     width: 100%;
-    margin-top: 5px;
+    margin-top: 0px;
   }
 
   nav ul li a {
