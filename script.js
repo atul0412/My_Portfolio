@@ -82,54 +82,45 @@ $(document).ready(function() {
           .catch(error => console.error('Error!', error.message))
   })
     
-  });
-  
-  function updateActiveSection() {
-    var scrollPosition = $(window).scrollTop();
-  
-    // Checking if scroll position is at the top of the page
-    if (scrollPosition === 0) {
+  // Mobile Menu Toggle
+  const menuBtn = document.querySelector(".menu-btn")
+  const nav = document.querySelector("nav")
+
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active")
+  })
+
+  // Close menu when clicking on a nav link
+  const navLinks = document.querySelectorAll("nav ul li a")
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active")
+    })
+  })
+});
+
+function updateActiveSection() {
+  var scrollPosition = $(window).scrollTop();
+
+  // Checking if scroll position is at the top of the page
+  if (scrollPosition === 0) {
+    $(".header ul li a").removeClass("active");
+    $(".header ul li a[href='#home']").addClass("active");
+    return;
+  }
+
+  // Iterate through each section and update the active class in the header
+  $("section").each(function() {
+    var target = $(this).attr("id");
+    var offset = $(this).offset().top;
+    var height = $(this).outerHeight();
+
+    if (
+      scrollPosition >= offset - 40 &&
+      scrollPosition < offset + height - 40
+    ) {
       $(".header ul li a").removeClass("active");
-      $(".header ul li a[href='#home']").addClass("active");
-      return;
+      $(".header ul li a[href='#" + target + "']").addClass("active");
     }
-  
-    // Iterate through each section and update the active class in the header
-    $("section").each(function() {
-      var target = $(this).attr("id");
-      var offset = $(this).offset().top;
-      var height = $(this).outerHeight();
-  
-      if (
-        scrollPosition >= offset - 40 &&
-        scrollPosition < offset + height - 40
-      ) {
-        $(".header ul li a").removeClass("active");
-        $(".header ul li a[href='#" + target + "']").addClass("active");
-      }
-    });
-  }
-  // Sidebar toggle functionality
-  const sidebarToggle = document.getElementById('sidebarToggle');
-  const sidebarNav = document.getElementById('sidebarNav');
-
-  if (sidebarToggle && sidebarNav) {
-    sidebarToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      sidebarNav.classList.toggle('open');
-    });
-
-    // Close sidebar function
-    function closeSidebar() {
-      sidebarNav.classList.remove('open');
-    }
-
-    // Close sidebar when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!sidebarNav.contains(e.target) && !sidebarToggle.contains(e.target)) {
-        closeSidebar();
-      }
-    });
-  }
-
- 
+  });
+}
