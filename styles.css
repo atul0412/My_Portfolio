@@ -129,15 +129,22 @@ profile-photo .img {
 .profile-text h5 {
   color: #e5e5e5;
   font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .profile-text h1 {
   color: #fed700;
   font-size: 3rem;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .profile-text p {
   color: #e5e5e5;
+  padding: 10px 0;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .profile-text .social i {
