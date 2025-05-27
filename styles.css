@@ -843,9 +843,9 @@ profile-photo .img {
   nav {
     position: fixed;
     top: 51px; /* Adjust if your header height changes */
-    left: -450px; /* Hidden by default */
+    left: -500px; /* Hidden by default */
     width: 100%; /* A fixed width for the sliding menu */
-    height: 55vh; /* Make it full height of the viewport */
+    height: 60vh; /* Make it full height of the viewport */
     background-color: #202020;
     padding: 40px 20px 20px 20px;
     transition: left 0.3s ease; /* Smooth transition for sliding */
@@ -865,7 +865,7 @@ profile-photo .img {
   nav ul {
     display: flex; /* Use flex to stack list items */
     flex-direction: column;
-    gap: 20px; /* Reduced gap for better fit */
+    gap: 10px; /* Reduced gap for better fit */
     width: 100%;
     margin-top: 5px;
   }
@@ -888,8 +888,8 @@ profile-photo .img {
   .menu-btn {
     display: block; /* Show hamburger button on mobile */
     position: absolute; /* Position relative to .header-area */
-    top: 15px; /* Adjust as needed to align with your header */
-    right: 15px; /* Adjust as needed */
+    top: 10px; /* Adjust as needed to align with your header */
+    right: 0px; /* Adjust as needed */
     border: none;
     color: #fff;
     font-size: 28px;
