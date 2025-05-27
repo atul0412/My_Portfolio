@@ -28,14 +28,14 @@ $(document).ready(function() {
     // Close the menu if the screen is resized from mobile to desktop
     // This prevents the mobile menu from staying open if the user resizes
     // from a small screen to a larger desktop view.
-    $(window).on('resize', function() {
-        // Assuming your mobile breakpoint is 768px (as per your CSS)
-        if ($(window).width() > 768) {
-            if (navElement.hasClass('active')) {
-                navElement.removeClass('active');
-            }
-        }
-    });
+    // $(window).on('resize', function() {
+    //     // Assuming your mobile breakpoint is 768px (as per your CSS)
+    //     if ($(window).width() > 768) {
+    //         if (navElement.hasClass('active')) {
+    //             navElement.removeClass('active');
+    //         }
+    //     }
+    // });
 
 
     // Your existing sticky header functionality
