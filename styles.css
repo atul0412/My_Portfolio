@@ -34,11 +34,12 @@ body {
 }
 
 
-/*---------------------------Header---------------------------*/
+/* /---------------------------Header---------------------------/ */
 
 .header-area {
   padding: 2px 0;
   transition: padding .3s;
+  position: relative; /* Added for proper absolute positioning of menu-btn on mobile */
 }
 
 .header-area.sticky {
@@ -80,14 +81,14 @@ nav ul li a.active {
 }
 
 .menu-btn {
-  display: none;
+  display: none; /* Hidden by default on desktop */
   font-size: 24px;
   cursor: pointer;
   color: #fed700;
 }
 
 
-/*---------------------------HomePage--------------------------*/
+/* /---------------------------HomePage--------------------------/ */
 
 .FirstElement {
   display: flex;
@@ -144,7 +145,7 @@ profile-photo .img {
   font-size: 30px;
   margin-right: 20px;
   transition: 0.5s;
-  cursor: pointer;  
+  cursor: pointer;
 
 }
 
@@ -152,7 +153,7 @@ profile-photo .img {
   color: #fed700;
   transform: rotate(360deg);
 }
-/*---------------------------Button---------------------------*/
+/* /---------------------------Button---------------------------/ */
 
 .btn-group {
   margin: 45px 0;
@@ -188,13 +189,13 @@ profile-photo .img {
   transform: scale(1.05);
 }
 
-/*---------------------------About---------------------------*/
+/* /---------------------------About---------------------------/ */
 
 .about-area {
   padding-top: 130px;
   background-color: #202020;
 }
- 
+
 .about {
   display: flex;
   justify-content: space-between;
@@ -243,7 +244,7 @@ profile-photo .img {
 
 
 
-/*---------------------------Education & Internship---------------------------*/
+/* /---------------------------Education & Internship---------------------------/ */
 
 .education-content .row {
   display: flex;
@@ -336,7 +337,7 @@ profile-photo .img {
   text-align: justify;
 }
 
-/*---------------------------Skills Section---------------------------*/
+/* /---------------------------Skills Section---------------------------/ */
 
 .skills-section {
   padding: 90px 0;
@@ -423,7 +424,7 @@ profile-photo .img {
   }
 }
 
-/*---------------------------Projects---------------------------*/
+/* /---------------------------Projects---------------------------/ */
 
 .project-content {
   padding: 90px 0;
@@ -512,7 +513,7 @@ profile-photo .img {
   color: #fed700;
 }
 
-/*---------------------------Certificates Section---------------------------*/
+/* /---------------------------Certificates Section---------------------------/ */
 
 .certificates-section {
   padding: 90px 0;
@@ -608,7 +609,7 @@ profile-photo .img {
 .view-certificate:hover {
   background-color: #333;
   color: #fed700;
-  text-decoration: none;  
+  text-decoration: none;
 }
 
 /* Responsive for certificates */
@@ -635,13 +636,13 @@ profile-photo .img {
     gap: 14px;
   }
   .certificate-item {
-    width: 90%;
-    min-width: unset;
+    flex-basis: 100%;
+    margin-bottom: 20px;
     padding: 16px 0;
   }
 }
 
-/*---------------------------Contact Me---------------------------*/
+/* /---------------------------Contact Me---------------------------/ */
 
 .contact-content {
   padding: 100px 0;
@@ -671,7 +672,7 @@ profile-photo .img {
   background-color: #292929;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
 }
 .contact-form form:hover {
@@ -704,7 +705,7 @@ profile-photo .img {
   border: #fed700 1px solid;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-.form-group input:focus,  
+.form-group input:focus,
 .form-group textarea:focus {
   border-color: #fed700;
   box-shadow: 0 0 5px rgba(254, 215, 0, 0.5);
@@ -724,7 +725,7 @@ profile-photo .img {
   left: 20px;
   font-size: 12px;
   color: #fed700;
-} 
+}
 .form-group textarea {
   height: 150px;
   resize: none;
@@ -737,7 +738,7 @@ profile-photo .img {
   border: none;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;  
+  transition: background-color 0.3s, transform 0.3s;
 }
 .submit-btn:hover {
   background-color: #333;
@@ -745,7 +746,7 @@ profile-photo .img {
   transform: scale(1.05);
 }
 
-/*---------------------------Footer---------------------------*/
+/* /---------------------------Footer---------------------------/ */
 
 .footer {
   max-width: 950px;
@@ -769,15 +770,13 @@ profile-photo .img {
   font-size: 12px;
 }
 
-/*------------------- Responsive Design on small screen -------------------*/
-
+/* ------------------- Responsive Design on small screen -------------------/ */
 /* Medium layout */
 @media only screen and (min-width:1000px) and (max-width:1200px) {
   .container {
     width: 970px;
   }
 }
-
 @media (max-width:1050px) {
   .FirstElement {
     flex-direction: column;
@@ -840,33 +839,33 @@ profile-photo .img {
 
 /* Mobile Layout */
 @media only screen and (max-width:768px){
+  /* Ensure the nav element transitions its 'left' property */
   nav {
-    position: fixed ;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    height: 50vh;
+    position: fixed;
+    top: 50px; /* Adjust if your header height changes */
+    left: -300px; /* Hidden by default */
+    width: 250px; /* A fixed width for the sliding menu */
+    height: 100vh; /* Make it full height of the viewport */
     background-color: #202020;
     padding: 40px 20px 20px 20px;
-    transition: left 0.3s;
+    transition: left 0.3s ease; /* Smooth transition for sliding */
     z-index: 200;
     box-shadow: 2px 0 12px rgba(0,0,0,0.15);
-    display: flex;
+    display: flex; /* Make nav a flex container for its children */
     flex-direction: column;
     align-items: flex-start;
     border-right: 1px solid #333;
-    
   }
 
-  nav.closed {
-    left: -300px;
-    
+  nav.active { /* Changed from .closed to .active for consistency with common JS patterns */
+    left: 0; /* Show menu */
   }
 
+  /* Adjustments for the ul inside nav */
   nav ul {
-    display: inline-block ;
+    display: flex; /* Use flex to stack list items */
     flex-direction: column;
-    gap: 50px;
+    gap: 20px; /* Reduced gap for better fit */
     width: 100%;
     margin-top: 5px;
   }
@@ -887,10 +886,10 @@ profile-photo .img {
   }
 
   .menu-btn {
-    display: block;
-    position: absolute;
-    top: 5px;;
-    right: 0;
+    display: block; /* Show hamburger button on mobile */
+    position: absolute; /* Position relative to .header-area */
+    top: 15px; /* Adjust as needed to align with your header */
+    right: 15px; /* Adjust as needed */
     border: none;
     color: #fff;
     font-size: 28px;
@@ -901,38 +900,13 @@ profile-photo .img {
     height: 44px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     padding: 10px;
+    background-color: transparent; /* Ensure no background interferes */
   }
   .container {
     width: 95%;
     min-width: unset;
     padding: 0 8px;
-  } 
-  /* .header-area {
-    position: sticky;
-    top: 0;
-    padding: 5px 0;
   }
-  .header {
-    flex-direction: row;
-    padding: 0 8px;
-    justify-content: space-between;
-  }
-  .header .menu_icon {
-    display: block;
-  }
-  .header ul {
-    display: none;
-    flex-direction: column;
-    background: #202020;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-  } */
-  .header i {
-    color: #e5e5e5;
-  } */
   .profile-text {
     width: 100%;
     padding: 20px 0;
@@ -995,4 +969,4 @@ profile-photo .img {
     padding: 10px 0 18px;
     font-size: 11px;
   }
-  }
+}
