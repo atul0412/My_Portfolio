@@ -841,11 +841,11 @@ profile-photo .img {
 /* Mobile Layout */
 @media only screen and (max-width:768px){
   nav {
-    position: fixed;
-    top: 50px;
+    position: fixed ;
+    top: 52px;
     left: 0;
-    width: 300px;
-    height: 50vh;
+    width: 80%;
+    height: 60vh;
     background-color: #202020;
     padding: 40px 20px 20px 20px;
     transition: left 0.3s;
@@ -855,23 +855,25 @@ profile-photo .img {
     flex-direction: column;
     align-items: flex-start;
     border-right: 1px solid #333;
+    
   }
 
   nav.closed {
-    left: -240px;
+    left: -300px;
+    
   }
 
   nav ul {
-    display: flex;
+    display: inline-block ;
     flex-direction: column;
-    gap: 10px;
+    gap: 50px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   nav ul li a {
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px 0;
     border-radius: 8px;
     display: block;
@@ -888,7 +890,7 @@ profile-photo .img {
     display: block;
     position: absolute;
     top: 18px;
-    right: -50px;
+    right: 0;
     background: #202020;
     border: none;
     color: #fff;
