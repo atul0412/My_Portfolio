@@ -842,10 +842,10 @@ profile-photo .img {
   /* Ensure the nav element transitions its 'left' property */
   nav {
     position: fixed;
-    top: 50px; /* Adjust if your header height changes */
-    left: -300px; /* Hidden by default */
-    width: 250px; /* A fixed width for the sliding menu */
-    height: 100vh; /* Make it full height of the viewport */
+    top: 51px; /* Adjust if your header height changes */
+    left: -450px; /* Hidden by default */
+    width: 100%; /* A fixed width for the sliding menu */
+    height: 55vh; /* Make it full height of the viewport */
     background-color: #202020;
     padding: 40px 20px 20px 20px;
     transition: left 0.3s ease; /* Smooth transition for sliding */
